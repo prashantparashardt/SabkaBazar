@@ -1,10 +1,11 @@
 import React from "react";
 import "./CategorySidebarElement.scss";
+import { Link } from "react-router-dom";
 function CategorySidebarElement(props) {
+  // console.log(props);
   return (
-    <div
-      role="button"
-      tabIndex="0"
+    <Link
+      to={props.seletcedCategory ? "/products/" : "/products/" + props.id}
       className={
         props.seletcedCategory
           ? "categorySidebarElement  selected"
@@ -13,7 +14,7 @@ function CategorySidebarElement(props) {
       onClick={props.categorySelected}
     >
       {props.categoryName}
-    </div>
+    </Link>
   );
 }
 

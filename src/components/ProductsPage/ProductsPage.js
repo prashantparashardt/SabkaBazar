@@ -51,12 +51,13 @@ const ProductsPage = (props) => {
   const categorySelectedHandler = (categoryId) => {
     // console.log(typeof id);
     if (selectedCategory === categoryId) {
-      setSelectedCategory(null);
       props.history.push("/products/");
+      setSelectedCategory(null);
+
       return false;
     } else {
       setSelectedCategory(categoryId);
-      props.history.push("/products/" + categoryId);
+      // props.history.push("/products/" + categoryId);
       // setToogleCategoryButton(true);
       return true;
     }

@@ -80,12 +80,12 @@ function App() {
       setIsCartOpen(true);
     }
 
-    // document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
   };
 
   const closeCartWindowHandler = () => {
     setIsCartOpen(false);
-    // document.body.style.overflow = "unset";
+    document.body.style.overflow = "unset";
   };
 
   const addCartItemHandler = (productId) => {
@@ -129,7 +129,7 @@ function App() {
           <Route path="/" component={Home} exact />
           <Route
             path="/products"
-            render={() => <ProductsPage addProduct={addProductHandler} />}
+            render={() => <ProductsPage addProduct={addProductHandler} exact />}
           />
           <Route path="/products/:id" component={ProductsPage} />
           <Route path="/Signin" component={Signin} exact />

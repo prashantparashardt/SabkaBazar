@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.scss";
 
-import Cart from "./Cart/Cart";
+// import Cart from "./Cart/Cart";
 import LeftHeaderNavigation from "./Navigation/LeftHeaderNavigation";
 import RightHeaderNavigation from "./Navigation/RightHeaderNavigation";
 

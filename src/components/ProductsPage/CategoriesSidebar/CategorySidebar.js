@@ -11,6 +11,7 @@ function CategorySidebar(props) {
             key={category.id}
             categoryName={category.name}
             categorySelected={() => props.categorySelected(category.id)}
+            id={category.id}
             seletcedCategory={
               props.seletcedCategory === category.id ? true : false
             }

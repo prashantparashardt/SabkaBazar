@@ -12,10 +12,10 @@ function Product({ name, imageUrl, description, price, addProduct }) {
         <div className="product__descriptionContainer">
           <p className="product__description">{description}</p>
         </div>
-        <div class="product__descriptionContainer_mobileOnly">
-          <p class="product__description">{description}</p>
-          <div class="product__pricewithbtn_mobile">
-            <button class="product__button_mobile" onClick={addProduct}>
+        <div className="product__descriptionContainer_mobileOnly">
+          <p className="product__description">{description}</p>
+          <div className="product__pricewithbtn_mobile">
+            <button className="product__button_mobile" onClick={addProduct}>
               Buy Now@ {price}
             </button>
           </div>

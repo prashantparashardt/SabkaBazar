@@ -2,13 +2,19 @@
 
 .categorySidebarElement {
   color: #707679;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 600;
   border-bottom: 1px solid #b2b9bc;
   padding: 0.8rem;
   margin-left: 0.5rem;
+  text-decoration: none;
+  &:hover {
+    background-color: $btn-color;
+    color: $primary-color;
+  }
 }
 
 .selected {
-  color: $btn-color;
+  background-color: $btn-color;
+  color: $primary-color;
 }

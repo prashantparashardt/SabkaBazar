@@ -3,12 +3,15 @@
 .categorySidebar {
   width: 25%;
   min-width: 160px;
+  display: flex;
   background-color: $secondary-color;
+  flex-direction: column;
 }
 
 @media (max-width: 1024px) {
   .categorySidebar {
     width: 20%;
+    min-width: 190px;
   }
 }
 

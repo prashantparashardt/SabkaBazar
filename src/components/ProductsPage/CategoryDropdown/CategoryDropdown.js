@@ -12,6 +12,8 @@ function CategoryDropdown(props) {
       <select
         className="CategoryDropdown__select"
         onChange={props.optionSelected}
+        // defaultValue={"DEFAULT"}
+        value={props.seletcedCategory ? props.seletcedCategory : ""}
       >
         <option value="">All Products</option>
         {props.categoriesData.map((category) => {
@@ -19,7 +21,7 @@ function CategoryDropdown(props) {
             <option
               key={category.id}
               value={category.id}
-              selected={props.seletcedCategory === category.id}
+              // selected={}
             >
               {category.name}
             </option>
