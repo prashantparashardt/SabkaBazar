@@ -1,0 +1,126 @@
+@import "./../../../../config";
+
+.product {
+  width: 25%;
+  //   border: 3px solid black;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  margin: 1.5rem 0;
+  &__name {
+    font-weight: 800;
+    height: 62px;
+  }
+  &__image {
+    Img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__description {
+    font-size: 0.7rem;
+    background-color: #eaeaea;
+    font-weight: 600;
+    padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 63px;
+    margin: 0;
+  }
+  &__pricewithbtn_tablet {
+    display: none;
+  }
+
+  &__pricewithbtn_Desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0 0.5rem 0;
+  }
+  &__price {
+    font-size: 0.8rem;
+  }
+  &__button {
+    @include set-btn-style();
+  }
+  hr {
+    margin: 0;
+    border: 0;
+    border-top: 1.3px dashed $font-color;
+  }
+  &__descriptionContainer_mobileOnly {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .product {
+    width: 50%;
+    padding: 0 1.5rem 0.5rem 1.5rem;
+    margin: 1rem 0;
+
+    &__name {
+      height: 43px;
+    }
+    &__image {
+      flex-basis: 50%;
+      Img {
+        width: 525px;
+      }
+    }
+    &__descriptionContainer {
+      // height: unset;
+      flex-basis: 50%;
+      overflow: hidden;
+      background-color: #eaeaea;
+    }
+    &__description {
+      font-size: 0.9rem;
+      // height: unset;
+      flex-basis: 50%;
+      overflow: unset;
+      margin: 0;
+    }
+    &__image {
+      flex-basis: 50%;
+    }
+    &__pricewithbtn_Desktop {
+      display: none;
+    }
+    &__button_tablet {
+      @include set-btn-style();
+      width: 100%;
+      margin: 1rem 0;
+    }
+    &__pricewithbtn_tablet {
+      display: block;
+    }
+  }
+
+  .product__imageWithDescription {
+    display: flex;
+  }
+}
+
+@media (max-width: 732px) {
+  .product {
+    width: 100%;
+    &__descriptionContainer {
+      display: none;
+    }
+    &__button_tablet {
+      display: none;
+    }
+    &__descriptionContainer_mobileOnly {
+      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex-basis: 50%;
+    }
+    &__button_mobile {
+      @include set-btn-style();
+      width: 100%;
+      margin: 1rem 0;
+      padding: 1rem 0;
+    }
+  }
+}

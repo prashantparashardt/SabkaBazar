@@ -1,0 +1,14 @@
+@import "../../../../config.scss";
+
+.categorySidebarElement {
+  color: #707679;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-bottom: 1px solid #b2b9bc;
+  padding: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.selected {
+  color: $btn-color;
+}

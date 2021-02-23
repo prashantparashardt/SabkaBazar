@@ -1,0 +1,12 @@
+.footer {
+  background-color: #eaeaea;
+
+  &__copyright {
+    max-width: 1024px;
+    margin: 0 auto;
+    font-size: 0.8rem;
+    font-weight: 600;
+    height: 2.5rem;
+    padding-top: 0.6rem;
+  }
+}

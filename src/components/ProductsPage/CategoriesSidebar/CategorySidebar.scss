@@ -1,0 +1,19 @@
+@import "./../../../config";
+
+.categorySidebar {
+  width: 25%;
+  min-width: 160px;
+  background-color: $secondary-color;
+}
+
+@media (max-width: 1024px) {
+  .categorySidebar {
+    width: 20%;
+  }
+}
+
+@media (max-width: 732px) {
+  .categorySidebar {
+    display: none;
+  }
+}

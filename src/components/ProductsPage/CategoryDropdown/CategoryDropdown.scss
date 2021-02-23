@@ -1,0 +1,64 @@
+@import "../../../config";
+.CategoryDropdown {
+  display: none;
+}
+
+@media (max-width: 732px) {
+  .CategoryDropdown {
+    display: block;
+
+    &__select {
+      width: 100%;
+      background-color: #c32858;
+      margin: 1rem 0;
+      padding: 0.7rem 0 0.7rem 0.7rem;
+
+      option {
+        background-color: #b6a0a0;
+      }
+      /* font-family: "Dosis"; */
+      /* font-weight: 800; */
+      font-size: 1rem;
+      cursor: pointer;
+      color: white;
+    }
+  }
+}
+
+// select option:hover,
+// select option:focus,
+// select option:active,
+// select option:checked {
+//   //   background: linear-gradient(#ffc894, #ffc894);
+//   background-color: green; /* for IE */
+// }
+
+select:focus > option:checked {
+  background: red !important;
+  color: black !important;
+  background-color: #c32858 !important;
+}
+
+// select:focus > option:focus-visible {
+//   background-color: grey !important;
+// }
+
+select:focus > option:hover {
+  background-color: yellow !important;
+}
+option:hover {
+  background-color: black !important;
+}
+select option:focus {
+  background-color: red !important;
+}
+select option:visited {
+  background-color: brown !important;
+}
+
+select option:focus-within {
+  background-color: violet !important;
+}
+select option:focus-visible {
+  background-color: green !important;
+}
