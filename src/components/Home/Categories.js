@@ -5,6 +5,8 @@ import { withRouter } from "react-router-dom";
 
 const Categories = (props) => {
   const [categories, setCategories] = useState([]);
+
+  //Use effect to fetch categories data
   useEffect(() => {
     axios.get("http://localhost:5000/categories").then((response) => {
       const outputArray = [];
@@ -28,6 +30,7 @@ const Categories = (props) => {
   const setPath = (categoryId) => {
     props.history.push("/products/" + categoryId);
   };
+
   return (
     <div className="categories">
       {categories.map((category, index) => {

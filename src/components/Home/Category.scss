@@ -9,20 +9,17 @@
   &__image {
     width: 30%;
     min-width: 175px;
-
     display: inline-block;
     Img {
       width: 100%;
-      // min-width: 220px;
     }
   }
   &__content {
     width: 70%;
     display: flex;
-
     justify-content: center;
     align-items: center;
-    &__inside {
+    &__contentinside {
       text-align: center;
     }
   }

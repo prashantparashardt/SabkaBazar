@@ -11,8 +11,8 @@ const ProductsPage = (props) => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(categoryIdFromUrl);
-  // const [toggleCategoryButton, setToogleCategoryButton] = useState(false);
 
+  // To get Categories data from Api
   useEffect(() => {
     axios.get("http://localhost:5000/categories").then((response) => {
       const outputArray = [];
@@ -29,11 +29,11 @@ const ProductsPage = (props) => {
             outputArray[indexArray[key] - 1] = response.data[newKey];
         }
       }
-      // console.log(outputArray);
       setCategories(outputArray);
     });
   }, []);
 
+  // To get all the Products data or Products data based on the category selected
   useEffect(() => {
     axios.get("http://localhost:5000/products").then((response) => {
       if (selectedCategory) {
@@ -48,21 +48,17 @@ const ProductsPage = (props) => {
     });
   }, [selectedCategory]);
 
+  //To set Category in selectedCategory state from left sidebar
   const categorySelectedHandler = (categoryId) => {
-    // console.log(typeof id);
     if (selectedCategory === categoryId) {
       props.history.push("/products/");
       setSelectedCategory(null);
-
-      return false;
     } else {
       setSelectedCategory(categoryId);
-      // props.history.push("/products/" + categoryId);
-      // setToogleCategoryButton(true);
-      return true;
     }
-    // console.log(selectedCategory);
   };
+
+  //To set Category in selectedCategory state from Dropdown
   const optionSelected = (e) => {
     let idx = e.target.selectedIndex;
     let categoryId = e.target.options[idx].value;
@@ -79,7 +75,6 @@ const ProductsPage = (props) => {
       />
       <CategoryDropdown
         categoriesData={categories}
-        // categorySelected={categorySelectedHandler}
         seletcedCategory={selectedCategory}
         optionSelected={optionSelected}
       />

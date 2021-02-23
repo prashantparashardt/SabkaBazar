@@ -1,3 +1,5 @@
+@import "../../config";
+
 .header {
   border-bottom: 2px solid #eaeaea;
   position: fixed;
@@ -8,11 +10,10 @@
   z-index: 100;
 
   &__main {
+    @include set-max-width();
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
-    max-width: 1024px;
     background-color: white;
   }
 }

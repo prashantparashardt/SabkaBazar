@@ -21,7 +21,7 @@ function Product({ name, imageUrl, description, price, addProduct }) {
           </div>
         </div>
       </div>
-      <div className="product__pricewithbtn_Desktop">
+      <div className="product__pricewithbtn_desktop">
         <div className="product__price">MRP Rs.{price}</div>
         <button className="product__button" onClick={addProduct}>
           Buy Now
@@ -32,7 +32,6 @@ function Product({ name, imageUrl, description, price, addProduct }) {
           {"Buy Now@ Rs" + price}
         </button>
       </div>
-
       <hr />
     </div>
   );

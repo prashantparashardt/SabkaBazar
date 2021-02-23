@@ -2,7 +2,6 @@
 
 .product {
   width: 25%;
-  //   border: 3px solid black;
   padding: 0 0.5rem 0.5rem 0.5rem;
   margin: 1.5rem 0;
   &__name {
@@ -17,7 +16,7 @@
   }
   &__description {
     font-size: 0.7rem;
-    background-color: #eaeaea;
+    background-color: $secondary-color;
     font-weight: 600;
     padding: 0.3rem 0.3rem 0.3rem 0.3rem;
     text-overflow: ellipsis;
@@ -29,10 +28,8 @@
     display: none;
   }
 
-  &__pricewithbtn_Desktop {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  &__pricewithbtn_desktop {
+    @include set-flex();
     margin: 1rem 0 0.5rem 0;
   }
   &__price {
@@ -67,14 +64,12 @@
       }
     }
     &__descriptionContainer {
-      // height: unset;
       flex-basis: 50%;
       overflow: hidden;
-      background-color: #eaeaea;
+      background-color: $secondary-color;
     }
     &__description {
       font-size: 0.9rem;
-      // height: unset;
       flex-basis: 50%;
       overflow: unset;
       margin: 0;

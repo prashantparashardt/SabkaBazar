@@ -14,7 +14,7 @@ const Category = (props) => {
           <img src={props.imageUrl} alt={props.name} />
         </div>
         <div className="category__content">
-          <div className="category__content__inside">
+          <div className="category__contentinside">
             <h3>{props.name}</h3>
             <p className="category__description">{props.description}</p>
             <button className="category__btnName" onClick={props.setPath}>

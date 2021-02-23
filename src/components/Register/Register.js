@@ -90,7 +90,7 @@ const Register = () => {
               Confirm Password
             </label>
           </div>
-          <input className="submit" type="submit" value="Login" />
+          <input className="submit" type="submit" value="SignUp" />
         </form>
       </div>
     </div>

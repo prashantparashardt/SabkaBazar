@@ -1,8 +1,10 @@
+@import "../../../config";
+
 .nav_left {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // padding-left: 6rem;
+
   &__list {
     display: flex;
     list-style: none;
@@ -14,6 +16,9 @@
     li:first-of-type {
       padding-right: 1rem;
     }
+  }
+  &__link {
+    @include set-link-style();
   }
 }
 @media (max-width: 732px) {

@@ -1,3 +1,5 @@
+@import "../../../config";
+
 .nav_right {
   &__list {
     display: flex;
@@ -9,6 +11,9 @@
     li:first-of-type {
       padding-right: 1rem;
     }
+  }
+  &__link {
+    @include set-link-style();
   }
 }
 

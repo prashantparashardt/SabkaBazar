@@ -1,34 +1,7 @@
-$btn-color: #b90e3fd9;
-$primary-color: white;
-$secondary-color: #eaeaea;
-$focus-color: #50dae2;
-
-@mixin set-btn-style() {
-  background-color: $btn-color;
-  color: $primary-color;
-  border: none;
-  font-weight: 600;
-  text-align: center;
-  padding: 0.8rem;
-  &:hover {
-    cursor: pointer;
-    transform: scale(0.98);
-  }
-  &:focus {
-    outline-color: $btn-color;
-    cursor: pointer;
-  }
-}
-
-@mixin set-max-width() {
-  max-width: 1024px;
-  margin: 0 auto;
-}
+@import "../../config";
 
 $slider-width: 1024px;
 $slider-height: 300px;
-
-//slider-width??max-width?/max-height;
 
 .wrapper {
   overflow: hidden;

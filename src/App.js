@@ -14,6 +14,7 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
 
+  //To add Products in the cart on from Products page
   const addProductHandler = (product) => {
     function httpRequest(method, url, body) {
       return new Promise((resolve, reject) => {
@@ -58,6 +59,8 @@ function App() {
       }
     });
   };
+
+  // To calculate the total Price of all the item in the cart
   useEffect(() => {
     if (productsInfo.length > 0) {
       const finalPrice = productsInfo
@@ -73,21 +76,23 @@ function App() {
     }
   }, [productsInfo]);
 
+  // To toggle cart modal window from cart button
   const openWindowCartHandler = () => {
     if (isCartOpen) {
+      document.body.style.overflow = "unset";
       setIsCartOpen(false);
     } else {
+      document.body.style.overflow = "hidden";
       setIsCartOpen(true);
     }
-
-    document.body.style.overflow = "hidden";
   };
-
+  //To close cart button from Close button in Cart Modal window
   const closeCartWindowHandler = () => {
     setIsCartOpen(false);
     document.body.style.overflow = "unset";
   };
 
+  // To increase the quantity of exisiting product present in the cart
   const addCartItemHandler = (productId) => {
     let products = [...productsInfo];
     const productExists = products.filter((item) => {
@@ -101,7 +106,7 @@ function App() {
     const countAfterAddingProduct = noOfCartItems + 1;
     setNoOfCartItems(countAfterAddingProduct);
   };
-
+  // To decrease the quantity or remove exisiting product present in the cart
   const removeCartItemHandler = (productId) => {
     let productData = [...productsInfo];
     const productIndex = productData.findIndex((product) => {
