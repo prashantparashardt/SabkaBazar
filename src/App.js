@@ -8,14 +8,12 @@ import Signin from "./components/Signin/Signin";
 import Register from "./components/Register/Register";
 import Footer from "./components/Footer/Footer";
 import CartModalWindow from "./components/CartModalWindow/CartModalWindow";
-
 function App() {
   const [noOfCartItems, setNoOfCartItems] = useState(0);
   const [productsInfo, setProductInfo] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
 
-  //Function to add products in cart from Product page
   const addProductHandler = (product) => {
     function httpRequest(method, url, body) {
       return new Promise((resolve, reject) => {
@@ -60,8 +58,6 @@ function App() {
       }
     });
   };
-
-  //To Update Total price of all the products present in the cart
   useEffect(() => {
     if (productsInfo.length > 0) {
       const finalPrice = productsInfo
@@ -77,21 +73,21 @@ function App() {
     }
   }, [productsInfo]);
 
-  //To open Cart window on click of Cart button
   const openWindowCartHandler = () => {
     if (isCartOpen) {
       setIsCartOpen(false);
     } else {
       setIsCartOpen(true);
     }
+
+    // document.body.style.overflow = "hidden";
   };
 
-  //To close Cart window on click of close cart button
   const closeCartWindowHandler = () => {
     setIsCartOpen(false);
+    // document.body.style.overflow = "unset";
   };
 
-  //To increase the quantity of items present in the cart
   const addCartItemHandler = (productId) => {
     let products = [...productsInfo];
     const productExists = products.filter((item) => {
@@ -105,7 +101,7 @@ function App() {
     const countAfterAddingProduct = noOfCartItems + 1;
     setNoOfCartItems(countAfterAddingProduct);
   };
-  //To decrease the quantity of items present in the cart
+
   const removeCartItemHandler = (productId) => {
     let productData = [...productsInfo];
     const productIndex = productData.findIndex((product) => {

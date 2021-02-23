@@ -50,11 +50,13 @@
   .CartProducts {
     padding: 0.5rem;
     &__Img {
-      width: 7%;
-      // height: 15%;
+      width: 11%;
     }
   }
 }
 
 @media (max-width: 732px) {
+  .CartProducts__Img {
+    width: 17%;
+  }
 }
