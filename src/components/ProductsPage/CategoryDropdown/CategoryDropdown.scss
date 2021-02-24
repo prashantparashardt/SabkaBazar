@@ -24,27 +24,5 @@
 }
 
 select:focus > option:checked {
-  background: red !important;
-  color: black !important;
   background-color: #c32858 !important;
 }
-
-// select:focus > option:hover {
-//   background-color: yellow !important;
-// }
-// option:hover {
-//   background-color: black !important;
-// }
-// select option:focus {
-//   background-color: red !important;
-// }
-// select option:visited {
-//   background-color: brown !important;
-// }
-
-// select option:focus-within {
-//   background-color: violet !important;
-// }
-// select option:focus-visible {
-//   background-color: green !important;
-// }

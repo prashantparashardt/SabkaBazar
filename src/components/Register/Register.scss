@@ -46,7 +46,8 @@
   position: relative;
   padding: 0;
 }
-.form-row__input-text:focus + .form-row__label-helper {
+.form-row__input-text:focus + .form-row__label-helper,
+.form-row__input-text:not(:placeholder-shown) + .form-row__label-helper {
   opacity: 1;
   padding: 0.5rem 0;
   bottom: 95%;
