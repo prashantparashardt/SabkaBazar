@@ -1,11 +1,12 @@
 import React from "react";
 import "./Logo.scss";
 import sabkaBazarLogo from "../../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Logo = () => (
-  <div className="logo">
-    <img src={sabkaBazarLogo} alt="SabkaBazar Logo" />
-  </div>
+  <Link className="logo" to="/">
+    <img src={sabkaBazarLogo} alt="HomePage" />
+  </Link>
 );
 
 export default Logo;

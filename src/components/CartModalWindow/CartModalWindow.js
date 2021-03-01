@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./CartModalWindow.scss";
 import CartProducts from "./CartProducts/CartProducts";
 import LowestPriceLogo from "../../assets/lowest-price.png";
 
 function CartModalWindow(props) {
   let windowtoggle = ["backdrop", props.openCart ? "" : "hidden"].join(" ");
-  // let windowtoggle = ["backdrop", true ? "" : "hidden"].join(" ");
+  // console.log(props);
+
   return (
     <div className={windowtoggle}>
-      {/* {console.log(props.addedProductsInCart)} */}
       <div className="cartModalWindow">
-        <div className="cartModalWindow__container">
+        <div
+          className="cartModalWindow__container"
+          role="dialog"
+          aria-modal="true"
+        >
           <div className="cartModalWindow__header">
             <div>
               <strong>My Cart</strong>
               {`(${props.noOfCartItems} item)`}
             </div>
             <button
+              ref={props.cartModalCloseBtn}
               className="cartModalWindow__headerbtn"
               onClick={props.closeCartWindow}
             >
@@ -50,18 +55,29 @@ function CartModalWindow(props) {
               Your favourite items are just a click away
             </div>
           )}
-          <div className="cartModalWindow__footer">
-            <div className="cartModalWindow__promo">
-              Promo code can be applied on payment page
+          {props.addedProductsInCart.length === 0 ? (
+            <div className="cartModalWindow__footer">
+              <button
+                className="cartModalWindow__checkout"
+                onClick={props.cartCheckout}
+              >
+                <span style={{ margin: "auto" }}>Start Shopping</span>
+              </button>
             </div>
-            <button
-              className="cartModalWindow__checkout"
-              onClick={props.cartCheckout}
-            >
-              <span>Proceed to Checkout</span>
-              <span>{` Rs ${props.finalPrice} >`}</span>
-            </button>
-          </div>
+          ) : (
+            <div className="cartModalWindow__footer">
+              <div className="cartModalWindow__promo">
+                Promo code can be applied on payment page
+              </div>
+              <button
+                className="cartModalWindow__checkout"
+                onClick={props.cartCheckout}
+              >
+                <span>Proceed to Checkout</span>
+                <span>{` Rs ${props.finalPrice} >`}</span>
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

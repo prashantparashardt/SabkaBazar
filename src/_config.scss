@@ -17,7 +17,7 @@ $focus-color: #50dae2;
     transform: scale(0.98);
   }
   &:focus {
-    outline-color: $btn-color;
+    outline-color: black;
     cursor: pointer;
   }
 }

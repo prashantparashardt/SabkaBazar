@@ -4,7 +4,7 @@ import "./Product.scss";
 function Product({ name, imageUrl, description, price, addProduct }) {
   return (
     <div className="product">
-      <div className="product__name">{name}</div>
+      <h2 className="product__name">{name}</h2>
       <div className="product__imageWithDescription">
         <div className="product__image">
           <img src={imageUrl} alt={name} />

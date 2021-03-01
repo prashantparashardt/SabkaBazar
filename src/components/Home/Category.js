@@ -15,7 +15,7 @@ const Category = (props) => {
         </div>
         <div className="category__content">
           <div className="category__contentinside">
-            <h3>{props.name}</h3>
+            <h3 aria-label={props.name}>{props.name}</h3>
             <p className="category__description">{props.description}</p>
             <button className="category__btnName" onClick={props.setPath}>
               {"Explore " + props.btnName}
