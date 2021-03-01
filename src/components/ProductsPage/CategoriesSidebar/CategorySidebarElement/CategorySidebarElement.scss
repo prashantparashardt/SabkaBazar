@@ -2,19 +2,22 @@
 
 .categorySidebarElement {
   color: #707679;
-  font-size: 0.95rem;
   font-weight: 600;
+  text-decoration: none;
+}
+.category_list {
+  list-style: none;
   border-bottom: 1px solid #b2b9bc;
   padding: 0.8rem;
-  margin-left: 0.5rem;
-  text-decoration: none;
-  &:hover {
-    background-color: $btn-color;
-    color: $primary-color;
-  }
+}
+.category_list:hover {
+  background-color: $btn-color;
+  color: $primary-color;
 }
 
-.selected {
+.selected_list {
   background-color: $btn-color;
+}
+.selected_anchor {
   color: $primary-color;
 }

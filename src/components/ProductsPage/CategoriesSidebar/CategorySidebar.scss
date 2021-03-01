@@ -4,8 +4,10 @@
   width: 25%;
   min-width: 160px;
   display: flex;
-  background-color: $secondary-color;
+  background-color: #eaeaea;
   flex-direction: column;
+  margin: 0;
+  padding-left: 2px;
 }
 
 @media (max-width: 1024px) {

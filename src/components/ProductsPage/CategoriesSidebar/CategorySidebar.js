@@ -4,7 +4,7 @@ import CategorySidebarElement from "./CategorySidebarElement/CategorySidebarElem
 
 function CategorySidebar(props) {
   return (
-    <div className="categorySidebar">
+    <ul className="categorySidebar">
       {props.categoriesData.map((category) => {
         return (
           <CategorySidebarElement
@@ -18,7 +18,7 @@ function CategorySidebar(props) {
           />
         );
       })}
-    </div>
+    </ul>
   );
 }
 
