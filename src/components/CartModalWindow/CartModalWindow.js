@@ -8,13 +8,16 @@ function CartModalWindow(props) {
   // console.log(props);
   const cartCloseButton = useRef(null);
   useEffect(() => {
-    // console.log(cartButton.current);
+    console.log(cartCloseButton.current);
     cartCloseButton.current.focus();
+    return () => {
+      console.log("Hello");
+    };
   }, []);
+
   const CheckoutHandler = (e) => {
     if (e.key === "Tab") {
       cartCloseButton.current.focus();
-      alert("Hello");
     }
   };
 
@@ -22,6 +25,7 @@ function CartModalWindow(props) {
     <div className={windowtoggle}>
       <div className="cartModalWindow">
         <div
+          ref={cartCloseButton}
           tabIndex="-1"
           className="cartModalWindow__container"
           role="dialog"
@@ -33,7 +37,6 @@ function CartModalWindow(props) {
               {`(${props.noOfCartItems} item)`}
             </div>
             <button
-              ref={cartCloseButton}
               className="cartModalWindow__headerbtn"
               onClick={props.closeCartWindow}
             >

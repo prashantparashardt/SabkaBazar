@@ -11,6 +11,7 @@ const ProductsPage = (props) => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(categoryIdFromUrl);
+  const [width, setWidth] = useState(window.innerWidth);
 
   // To get Categories data from Api
   useEffect(() => {
@@ -65,19 +66,31 @@ const ProductsPage = (props) => {
     props.history.push("/products/" + categoryId);
     setSelectedCategory(categoryId);
   };
+  //To update Inner Width
+  const updateWidth = () => {
+    setWidth(window.innerWidth);
+  };
+  //Use effect to update state on width resize
+  useEffect(() => {
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  });
 
   return (
     <div className="productspage">
-      <CategorySidebar
-        categoriesData={categories}
-        categorySelected={categorySelectedHandler}
-        seletcedCategory={selectedCategory}
-      />
-      <CategoryDropdown
-        categoriesData={categories}
-        seletcedCategory={selectedCategory}
-        optionSelected={optionSelected}
-      />
+      {width < 732 ? (
+        <CategoryDropdown
+          categoriesData={categories}
+          seletcedCategory={selectedCategory}
+          optionSelected={optionSelected}
+        />
+      ) : (
+        <CategorySidebar
+          categoriesData={categories}
+          categorySelected={categorySelectedHandler}
+          seletcedCategory={selectedCategory}
+        />
+      )}
       <Products productsData={products} addProduct={props.addProduct} />
     </div>
   );
