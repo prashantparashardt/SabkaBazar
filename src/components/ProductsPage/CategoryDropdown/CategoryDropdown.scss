@@ -9,7 +9,7 @@
 
     &__select {
       width: 100%;
-      background-color: #c32858;
+      background-color: $btn-color;
       margin: 1rem 0;
       padding: 0.7rem 0 0.7rem 0.7rem;
 
@@ -18,11 +18,11 @@
       }
       font-size: 1rem;
       cursor: pointer;
-      color: white;
+      color: $primary-color;
     }
   }
 }
 
 select:focus > option:checked {
-  background-color: #c32858 !important;
+  background-color: $btn-color !important;
 }

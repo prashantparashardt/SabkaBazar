@@ -9,15 +9,15 @@
   flex-direction: column;
 }
 
-.page-details {
+.pageDetails {
   margin: 1.5rem 2rem 0 5rem;
   flex: 2 1;
 }
-.page-details__heading {
+.pageDetails__heading {
   font-size: 2rem;
   font-weight: 600;
 }
-.page-details__desc {
+.pageDetails__desc {
   font-size: 0.9rem;
   font-weight: 500;
 }
@@ -26,7 +26,7 @@
   flex: 3 1;
 }
 
-.form-row {
+.formRow {
   width: 60%;
   position: relative;
   margin-bottom: 2rem;
@@ -37,7 +37,7 @@
     border-bottom: 2px solid $focus-color;
   }
 }
-.form-row__input-text {
+.formRow__inputText {
   text-decoration: none;
   border: none;
   outline: none;
@@ -46,15 +46,15 @@
   position: relative;
   padding: 0;
 }
-.form-row__input-text:focus + .form-row__label-helper,
-.form-row__input-text:not(:placeholder-shown) + .form-row__label-helper {
+.formRow__inputText:focus + .formRow__labelHelper,
+.formRow__inputText:not(:placeholder-shown) + .formRow__labelHelper {
   opacity: 1;
   padding: 0.5rem 0;
   bottom: 95%;
   color: $focus-color;
 }
 
-.form-row__label-helper {
+.formRow__labelHelper {
   position: absolute;
   bottom: 0;
   left: 0;

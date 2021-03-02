@@ -1,5 +1,6 @@
+@import "../../config";
 .footer {
-  background-color: #eaeaea;
+  background-color: $secondary-color;
 
   &__copyright {
     max-width: 1024px;

@@ -15,7 +15,11 @@ function Product({ name, imageUrl, description, price, addProduct }) {
         <div className="product__descriptionContainer_mobileOnly">
           <p className="product__description">{description}</p>
           <div className="product__pricewithbtn_mobile">
-            <button className="product__button_mobile" onClick={addProduct}>
+            <button
+              className="product__button_mobile"
+              onClick={addProduct}
+              aria-label={`Click to add ${name} into cart for price Rs ${price}`}
+            >
               Buy Now@ {price}
             </button>
           </div>
@@ -23,13 +27,21 @@ function Product({ name, imageUrl, description, price, addProduct }) {
       </div>
       <div className="product__pricewithbtn_desktop">
         <div className="product__price">MRP Rs.{price}</div>
-        <button className="product__button" onClick={addProduct}>
+        <button
+          className="product__button"
+          onClick={addProduct}
+          aria-label={`Click to add ${name} into cart`}
+        >
           Buy Now
         </button>
       </div>
       <div className="product__pricewithbtn_tablet">
-        <button className="product__button_tablet" onClick={addProduct}>
-          {"Buy Now@ Rs" + price}
+        <button
+          className="product__button_tablet"
+          onClick={addProduct}
+          aria-label={`Click to add ${name} into cart for price Rs ${price}`}
+        >
+          {"Buy Now@ Rs " + price}
         </button>
       </div>
       <hr />

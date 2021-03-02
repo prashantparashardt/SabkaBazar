@@ -11,7 +11,7 @@
   justify-content: flex-end;
   &__container {
     position: relative;
-    background-color: #eaeaea;
+    background-color: $secondary-color;
     height: calc(100vh - 5.75rem);
     overflow: hidden;
     width: 40%;
@@ -20,7 +20,7 @@
   }
   &__header {
     background-color: black;
-    color: white;
+    color: $primary-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,11 +29,11 @@
   &__headerbtn {
     font-size: 1.3rem;
     background-color: black;
-    color: white;
+    color: $primary-color;
     border: none;
   }
   &__banner {
-    background-color: white;
+    background-color: $primary-color;
     font-weight: 600;
     display: flex;
     width: 95%;

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import "./CartModalWindow.scss";
 import CartProducts from "./CartProducts/CartProducts";
 import LowestPriceLogo from "../../assets/lowest-price.png";
@@ -6,11 +6,23 @@ import LowestPriceLogo from "../../assets/lowest-price.png";
 function CartModalWindow(props) {
   let windowtoggle = ["backdrop", props.openCart ? "" : "hidden"].join(" ");
   // console.log(props);
+  const cartCloseButton = useRef(null);
+  useEffect(() => {
+    // console.log(cartButton.current);
+    cartCloseButton.current.focus();
+  }, []);
+  const CheckoutHandler = (e) => {
+    if (e.key === "Tab") {
+      cartCloseButton.current.focus();
+      alert("Hello");
+    }
+  };
 
   return (
     <div className={windowtoggle}>
       <div className="cartModalWindow">
         <div
+          tabIndex="-1"
           className="cartModalWindow__container"
           role="dialog"
           aria-modal="true"
@@ -21,7 +33,7 @@ function CartModalWindow(props) {
               {`(${props.noOfCartItems} item)`}
             </div>
             <button
-              ref={props.cartModalCloseBtn}
+              ref={cartCloseButton}
               className="cartModalWindow__headerbtn"
               onClick={props.closeCartWindow}
             >
@@ -58,6 +70,7 @@ function CartModalWindow(props) {
           {props.addedProductsInCart.length === 0 ? (
             <div className="cartModalWindow__footer">
               <button
+                onKeyDown={CheckoutHandler}
                 className="cartModalWindow__checkout"
                 onClick={props.cartCheckout}
               >
@@ -72,9 +85,11 @@ function CartModalWindow(props) {
               <button
                 className="cartModalWindow__checkout"
                 onClick={props.cartCheckout}
+                onKeyDown={CheckoutHandler}
+                aria-label={`Total Price for all products is ${props.finalPrice}. Proceed to checkout Page`}
               >
-                <span>Proceed to Checkout</span>
-                <span>{` Rs ${props.finalPrice} >`}</span>
+                <span aria-hidden="true"> Proceed to Checkout</span>
+                <span aria-hidden="true">{` Rs ${props.finalPrice} >`}</span>
               </button>
             </div>
           )}

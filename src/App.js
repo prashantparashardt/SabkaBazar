@@ -140,16 +140,18 @@ function App() {
           <Route path="/Signin" component={Signin} exact />
           <Route path="/register" component={Register} exact />
         </Switch>
-        <CartModalWindow
-          openCart={isCartOpen}
-          noOfCartItems={noOfCartItems}
-          closeCartWindow={closeCartWindowHandler}
-          addedProductsInCart={productsInfo}
-          finalPrice={totalPrice}
-          removeCartItem={removeCartItemHandler}
-          addCartItem={addCartItemHandler}
-          cartCheckout={closeCartWindowHandler}
-        />
+        {isCartOpen && (
+          <CartModalWindow
+            openCart={isCartOpen}
+            noOfCartItems={noOfCartItems}
+            closeCartWindow={closeCartWindowHandler}
+            addedProductsInCart={productsInfo}
+            finalPrice={totalPrice}
+            removeCartItem={removeCartItemHandler}
+            addCartItem={addCartItemHandler}
+            cartCheckout={closeCartWindowHandler}
+          />
+        )}
       </main>
       <Footer />
     </div>

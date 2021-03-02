@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Logo = () => (
   <Link className="logo" to="/">
-    <img src={sabkaBazarLogo} alt="HomePage" />
+    <img src={sabkaBazarLogo} alt="Navigate to HomePage" />
   </Link>
 );
 

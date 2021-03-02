@@ -1,6 +1,7 @@
+@import "../../../config";
 .cart {
   display: flex;
-  background-color: #eeeeee;
+  background-color: $secondary-color;
   height: 4rem;
   align-items: center;
   justify-content: center;

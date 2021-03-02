@@ -1,15 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./Cart.scss";
 
 const Cart = (props) => {
-  // const cartButton = useRef();
-
   return (
-    <button
-      // ref={cartButton}
-      className="cart"
-      onClick={props.openCartWindow}
-    >
+    <button className="cart" onClick={props.openCartWindow}>
       <svg
         version="1.1"
         viewBox="0 0 24 24"
