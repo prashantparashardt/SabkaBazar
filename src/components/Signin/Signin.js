@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import "./Signin.scss";
+import Input from "../UI/Input/Input";
 
 const Signin = () => {
   const history = useHistory();
@@ -18,7 +19,7 @@ const Signin = () => {
       <div className="auth-form">
         <form onSubmit={submitHandler} method="POST" action="/">
           <div className="formRow flex--column">
-            <input
+            <Input
               type="email"
               placeholder="Email"
               className="formRow__input-text"
@@ -31,7 +32,7 @@ const Signin = () => {
             </label>
           </div>
           <div className="formRow flex--column">
-            <input
+            <Input
               type="password"
               name="password"
               id="password"

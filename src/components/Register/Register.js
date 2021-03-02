@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import "./Register.scss";
+import Input from "../UI/Input/Input";
 
 const Register = () => {
   const history = useHistory();
@@ -23,20 +24,20 @@ const Register = () => {
       <div className="auth-form">
         <form onSubmit={submitHandler} method="POST" action="/">
           <div className="formRow flex--column">
-            <input
+            <Input
               type="text"
               placeholder="First Name"
               className="formRow__inputText"
               id="firstName"
-              required
+              required={true}
               name="firstName"
             />
             <label htmlFor="firstName" className="formRow__labelHelper">
-              first Name
+              First Name
             </label>
           </div>
           <div className="formRow flex--column">
-            <input
+            <Input
               type="text"
               placeholder="Last Name"
               className="formRow__inputText"
@@ -49,7 +50,7 @@ const Register = () => {
             </label>
           </div>
           <div className="formRow flex--column">
-            <input
+            <Input
               type="email"
               placeholder="Email"
               className="formRow__inputText"
@@ -62,7 +63,7 @@ const Register = () => {
             </label>
           </div>
           <div className="formRow flex--column">
-            <input
+            <Input
               type="password"
               name="password"
               id="password"
@@ -77,7 +78,7 @@ const Register = () => {
             </label>
           </div>
           <div className="formRow flex--column">
-            <input
+            <Input
               type="password"
               name="confirmPassword"
               id="confirmPassword"
