@@ -1,5 +1,6 @@
 import React from "react";
 import "./Product.scss";
+// import Button from "../../../UI/Button/Button";
 
 function Product({ name, imageUrl, description, price, addProduct }) {
   return (
@@ -15,9 +16,16 @@ function Product({ name, imageUrl, description, price, addProduct }) {
         <div className="product__descriptionContainer_mobileOnly">
           <p className="product__description">{description}</p>
           <div className="product__pricewithbtn_mobile">
-            <button
+            {/* <button
               className="product__button_mobile"
               onClick={addProduct}
+              aria-label={`Click to add ${name} into cart for price Rs ${price}`}
+            >
+              Buy Now@ {price}
+            </button> */}
+            <button
+              className="product__button_mobile"
+              click={addProduct}
               aria-label={`Click to add ${name} into cart for price Rs ${price}`}
             >
               Buy Now@ {price}
@@ -29,7 +37,7 @@ function Product({ name, imageUrl, description, price, addProduct }) {
         <div className="product__price">MRP Rs.{price}</div>
         <button
           className="product__button"
-          onClick={addProduct}
+          click={addProduct}
           aria-label={`Click to add ${name} into cart`}
         >
           Buy Now

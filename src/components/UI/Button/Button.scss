@@ -1,0 +1,5 @@
+@import "../../../config";
+
+.btn {
+  @include set-btn-style();
+}

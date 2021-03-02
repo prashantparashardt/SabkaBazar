@@ -1,5 +1,6 @@
 import React from "react";
 import "./Category.scss";
+import Button from "../UI/Button/Button";
 
 const Category = (props) => {
   let imagePosition = "";
@@ -17,9 +18,12 @@ const Category = (props) => {
           <div className="category__contentinside">
             <h3 aria-label={props.name}>{props.name}</h3>
             <p className="category__description">{props.description}</p>
-            <button className="category__btnName" onClick={props.setPath}>
+            <Button className="category__btnName" click={props.setPath}>
               {"Explore " + props.btnName}
-            </button>
+            </Button>
+            {/* <button className="category__btnName" onClick={props.setPath}>
+              {"Explore " + props.btnName}
+            </button> */}
           </div>
         </div>
       </div>
