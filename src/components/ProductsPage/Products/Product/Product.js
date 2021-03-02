@@ -1,6 +1,5 @@
 import React from "react";
 import "./Product.scss";
-// import Button from "../../../UI/Button/Button";
 
 function Product({ name, imageUrl, description, price, addProduct }) {
   return (
@@ -23,7 +22,7 @@ function Product({ name, imageUrl, description, price, addProduct }) {
             >
               Buy Now@ {price}
             </button> */}
-            <button
+            <b
               className="product__button_mobile"
               click={addProduct}
               aria-label={`Click to add ${name} into cart for price Rs ${price}`}
