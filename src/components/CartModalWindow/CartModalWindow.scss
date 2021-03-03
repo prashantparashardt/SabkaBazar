@@ -26,12 +26,12 @@
     align-items: center;
     padding: 1rem;
   }
-  &__headerbtn {
-    font-size: 1.3rem;
-    background-color: black;
-    color: $primary-color;
-    border: none;
-  }
+  // &__headerbtn {
+  //   font-size: 1.3rem;
+  //   background-color: black;
+  //   color: $primary-color;
+  //   border: none;
+  // }
   &__banner {
     background-color: $primary-color;
     font-weight: 600;
@@ -64,16 +64,16 @@
     font-weight: 600;
     margin: 0.5rem 0;
   }
-  &__checkout {
-    @include set-btn-style;
-    width: 92%;
-    font-size: 1.1rem;
-    margin: 1rem 1.3rem;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  // &__checkout {
+  //   @include set-btn-style;
+  //   width: 92%;
+  //   font-size: 1.1rem;
+  //   margin: 1rem 1.3rem;
+  //   border-radius: 5px;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  // }
 }
 
 .backdrop {

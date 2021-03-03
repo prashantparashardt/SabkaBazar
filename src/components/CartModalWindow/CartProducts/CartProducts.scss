@@ -29,20 +29,20 @@
       align-items: center;
       position: relative;
     }
-    &__less {
-      @include set-btn-style;
-      border-radius: 50%;
-      font-size: 1.1rem;
-      width: 7%;
-      padding: revert;
-      width: 21px;
-    }
-    &__more {
-      @include set-btn-style;
-      border-radius: 50%;
-      font-size: 1.1rem;
-      padding: revert;
-    }
+    // &__less {
+    //   @include set-btn-style;
+    //   border-radius: 50%;
+    //   font-size: 1.1rem;
+    //   width: 7%;
+    //   padding: revert;
+    //   width: 21px;
+    // }
+    // &__more {
+    //   @include set-btn-style;
+    //   border-radius: 50%;
+    //   font-size: 1.1rem;
+    //   padding: revert;
+    // }
   }
 }
 

@@ -25,6 +25,7 @@
     height: 63px;
     margin: 0;
   }
+
   &__pricewithbtn_tablet {
     display: none;
   }
@@ -36,9 +37,9 @@
   &__price {
     font-size: 0.8rem;
   }
-  &__button {
-    @include set-btn-style();
-  }
+  // &__button {
+  //   @include set-btn-style();
+  // }
   hr {
     margin: 0;
     border: 0;
@@ -81,11 +82,11 @@
     &__pricewithbtn_desktop {
       display: none;
     }
-    &__button_tablet {
-      @include set-btn-style();
-      width: 100%;
-      margin: 1rem 0;
-    }
+    // &__button_tablet {
+    //   @include set-btn-style();
+    //   width: 100%;
+    //   margin: 1rem 0;
+    // }
     &__pricewithbtn_tablet {
       display: block;
     }
@@ -112,11 +113,11 @@
       justify-content: space-around;
       flex-basis: 50%;
     }
-    &__button_mobile {
-      @include set-btn-style();
-      width: 100%;
-      margin: 1rem 0;
-      padding: 1rem 0;
-    }
+    // &__button_mobile {
+    //   @include set-btn-style();
+    //   width: 100%;
+    //   margin: 1rem 0;
+    //   padding: 1rem 0;
+    // }
   }
 }

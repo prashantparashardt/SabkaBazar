@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import "./CartModalWindow.scss";
 import CartProducts from "./CartProducts/CartProducts";
 import LowestPriceLogo from "../../assets/lowest-price.png";
+import Button from "../UI/Button/Button";
 
 function CartModalWindow(props) {
   let windowtoggle = ["backdrop", props.openCart ? "" : "hidden"].join(" ");
@@ -36,12 +37,12 @@ function CartModalWindow(props) {
               <strong>My Cart</strong>
               {`(${props.noOfCartItems} item)`}
             </div>
-            <button
-              className="cartModalWindow__headerbtn"
-              onClick={props.closeCartWindow}
+            <Button
+              styles="cartModalWindow__headerbtn"
+              click={props.closeCartWindow}
             >
               x
-            </button>
+            </Button>
           </div>
           {props.noOfCartItems ? (
             <div className="cartModalWindow__products">
@@ -72,28 +73,28 @@ function CartModalWindow(props) {
           )}
           {props.addedProductsInCart.length === 0 ? (
             <div className="cartModalWindow__footer">
-              <button
-                onKeyDown={CheckoutHandler}
-                className="cartModalWindow__checkout"
-                onClick={props.cartCheckout}
+              <Button
+                keyDown={CheckoutHandler}
+                styles="cartModalWindow__checkout"
+                click={props.cartCheckout}
               >
                 <span style={{ margin: "auto" }}>Start Shopping</span>
-              </button>
+              </Button>
             </div>
           ) : (
             <div className="cartModalWindow__footer">
               <div className="cartModalWindow__promo">
                 Promo code can be applied on payment page
               </div>
-              <button
-                className="cartModalWindow__checkout"
-                onClick={props.cartCheckout}
-                onKeyDown={CheckoutHandler}
-                aria-label={`Total Price for all products is ${props.finalPrice}. Proceed to checkout Page`}
+              <Button
+                styles="cartModalWindow__checkout"
+                click={props.cartCheckout}
+                keyDown={CheckoutHandler}
+                ariaLabel={`Total Price for all products is ${props.finalPrice}. Proceed to checkout Page`}
               >
                 <span aria-hidden="true"> Proceed to Checkout</span>
                 <span aria-hidden="true">{` Rs ${props.finalPrice} >`}</span>
-              </button>
+              </Button>
             </div>
           )}
         </div>

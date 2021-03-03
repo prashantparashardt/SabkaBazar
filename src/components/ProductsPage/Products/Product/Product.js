@@ -1,5 +1,6 @@
 import React from "react";
 import "./Product.scss";
+import Button from "../../../UI/Button/Button";
 
 function Product({ name, imageUrl, description, price, addProduct }) {
   return (
@@ -7,7 +8,11 @@ function Product({ name, imageUrl, description, price, addProduct }) {
       <h2 className="product__name">{name}</h2>
       <div className="product__imageWithDescription">
         <div className="product__image">
-          <img src={imageUrl} alt={name} />
+          <picture>
+            {/* <source media="(max-width:650px)" srcset={imageUrl} > */}
+            {/* <source media="(min-width:465px)" srcset={imageUrl} /> */}
+            <img src={imageUrl} alt={name} />
+          </picture>
         </div>
         <div className="product__descriptionContainer">
           <p className="product__description">{description}</p>
@@ -15,34 +20,39 @@ function Product({ name, imageUrl, description, price, addProduct }) {
         <div className="product__descriptionContainer_mobileOnly">
           <p className="product__description">{description}</p>
           <div className="product__pricewithbtn_mobile">
-            <button
-              className="product__button_mobile"
-              onClick={addProduct}
-              aria-label={`Click to add ${name} into cart for price Rs ${price}`}
+            <Button
+              styles={"product__button_mobile"}
+              // onClick={addProduct}
+              click={addProduct}
+              ariaLabel={`Click to add ${name} into cart for price Rs ${price}`}
             >
               Buy Now@ {price}
-            </button>
+            </Button>
           </div>
         </div>
       </div>
       <div className="product__pricewithbtn_desktop">
         <div className="product__price">MRP Rs.{price}</div>
-        <button
-          className="product__button"
-          onClick={addProduct}
-          aria-label={`Click to add ${name} into cart`}
+        <Button
+          styles={"product__button"}
+          // className="product__button"
+          // onClick={addProduct}
+          click={addProduct}
+          ariaLabel={`Click to add ${name} into cart`}
         >
           Buy Now
-        </button>
+        </Button>
       </div>
       <div className="product__pricewithbtn_tablet">
-        <button
-          className="product__button_tablet"
-          onClick={addProduct}
-          aria-label={`Click to add ${name} into cart for price Rs ${price}`}
+        <Button
+          styles={"product__button_tablet"}
+          // className="product__button_tablet"
+          // onClick={addProduct}
+          click={addProduct}
+          ariaLabel={`Click to add ${name} into cart for price Rs ${price}`}
         >
           {"Buy Now@ Rs " + price}
-        </button>
+        </Button>
       </div>
       <hr />
     </div>

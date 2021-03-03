@@ -1,6 +1,6 @@
 import React from "react";
 import "./CartProducts.scss";
-
+import Button from "../../UI/Button/Button";
 function CartProducts(props) {
   let totalPrice = props.price * props.quantity;
 
@@ -12,26 +12,26 @@ function CartProducts(props) {
           {props.name}
         </div>
         <div className="CartProducts__middleContainer__btn">
-          <button
-            className="CartProducts__middleContainer__less"
-            onClick={props.removeCartItem}
-            aria-label={`Decrease ${props.name} quantity by 1`}
+          <Button
+            styles="CartProducts__middleContainer__less"
+            click={props.removeCartItem}
+            ariaLabel={`Decrease ${props.name} quantity by 1`}
           >
             -
-          </button>
+          </Button>
           <span
             style={{ width: "40px", textAlign: "center" }}
             aria-label={`No of items is ${props.quantity}`}
           >
             {props.quantity}
           </span>
-          <button
-            className="CartProducts__middleContainer__more"
-            onClick={props.addCartItem}
-            aria-label={`Increase ${props.name} quantity by 1`}
+          <Button
+            styles="CartProducts__middleContainer__more"
+            click={props.addCartItem}
+            ariaLabel={`Increase ${props.name} quantity by 1`}
           >
             +
-          </button>
+          </Button>
           <span
             style={{
               width: "40px",
