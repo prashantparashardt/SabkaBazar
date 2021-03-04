@@ -9,8 +9,8 @@ function Product({ name, imageUrl, description, price, addProduct }) {
       <div className="product__imageWithDescription">
         <div className="product__image">
           <picture>
-            {/* <source media="(max-width:650px)" srcset={imageUrl} > */}
-            {/* <source media="(min-width:465px)" srcset={imageUrl} /> */}
+            <source media="(max-width:1024px)" srcSet={imageUrl} />
+            <source media="(max-width:732px)" srcSet={imageUrl} />
             <img src={imageUrl} alt={name} />
           </picture>
         </div>

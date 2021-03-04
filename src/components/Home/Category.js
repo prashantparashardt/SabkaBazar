@@ -12,7 +12,11 @@ const Category = (props) => {
       <hr className="horizontalRow" />
       <div className={["category", imagePosition].join(" ")}>
         <div className="category__image">
-          <img src={props.imageUrl} alt={props.name} />
+          <picture>
+            <source media="(max-width:1024px)" srcSet={props.imageUrl} />
+            <source media="(max-width:732px)" srcSet={props.imageUrl} />
+            <img src={props.imageUrl} alt={props.name} />
+          </picture>
         </div>
         <div className="category__content">
           <div className="category__contentinside">

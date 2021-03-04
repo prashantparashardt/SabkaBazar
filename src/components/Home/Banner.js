@@ -172,10 +172,20 @@ function Slider() {
           {state.slidesData.map((item, index) => {
             return (
               <span key={index} className="slide" ref={slideRef}>
-                <img
-                  src={".." + item.bannerImageUrl}
-                  alt={item.bannerImageAlt}
-                />
+                <picture>
+                  <source
+                    media="(max-width:1024px)"
+                    srcSet={".." + item.bannerImageUrl}
+                  />
+                  <source
+                    media="(max-width:732px)"
+                    srcSet={".." + item.bannerImageUrl}
+                  />
+                  <img
+                    src={".." + item.bannerImageUrl}
+                    alt={item.bannerImageAlt}
+                  />
+                </picture>
               </span>
             );
           })}
